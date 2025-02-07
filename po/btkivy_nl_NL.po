@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: btkivy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-07 08:23+0100\n"
+"PO-Revision-Date: 2025-02-07 08:33+0100\n"
+"Last-Translator: Stas Zytkiewicz <stas.zytkiewicz@gmail.com>\n"
+"Language-Team: stas@childsplay.mobi\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../main.py:271
+msgid "Audio"
+msgstr "Audio"
+
+#: ../main.py:180
+msgid "Bluetooth Devices"
+msgstr "Bluetooth Apparaten"
+
+#: ../main.py:211
+msgid ""
+"Bluetooth adapter not found\n"
+"Only audio settings available!"
+msgstr ""
+"Bluetooth adapter niet gevonden\n"
+"Alleen de audio instellingen zijn beschikbaar!"
+
+#: ../main.py:156
+msgid "Choose the audio output"
+msgstr "Kies de audio-uitvoer"
+
+#: ../main.py:157 ../main.py:181
+msgid "Close"
+msgstr "Sluit"
+
+#: ../main.py:89
+msgid "Connect"
+msgstr "Verbind"
+
+#: ../main.py:90
+msgid "Connected"
+msgstr "Verbonden"
+
+#: ../main.py:91
+msgid "Connecting..."
+msgstr "Verbinden…"
+
+#: ../main.py:92
+msgid "Disconnecting..."
+msgstr "Verbinding verbreken..."
+
+#: ../main.py:182
+msgid "Find BT devices"
+msgstr "Vind BT apparaten"
+
+#: ../main.py:184
+msgid "Reset BT adapter"
+msgstr "Reset BT Adapter"
+
+#: ../main.py:261
+msgid "Scanning finished"
+msgstr "Zoeken klaar"
+
+#: ../main.py:183
+msgid "Scanning for BT devices"
+msgstr "Zoeken naar BT apparaten"
+
+#: ../main.py:185
+msgid "Set audio"
+msgstr "Audio instellen"

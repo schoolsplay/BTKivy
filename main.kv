@@ -1,0 +1,162 @@
+#: kivy 2.3.0
+#: import Style Style
+#: import version version
+
+# Copyright (c) 2024 Stas Zytkiewicz <stas@childsplay.mobi>
+# Copyright (c) 2024 BTP <info@btp.nl>
+
+<MyLabel@Label>:
+    color: Style.MainMenuStyle().fontcolor
+    font_size: Style.MainMenuStyle().fontsize
+    size_hint: 1, 0.05
+    text_size: self.size
+    halign: 'left'
+
+<MyButton@Button>:
+    text: "Close"
+    bold: True
+    background_normal: 'buttons/100_100_blue.png'
+    background_down: 'buttons/100_100_black.png'
+    font_size: '20sp'
+
+<MyToggleButton@ToggleButton>:
+    text: ""
+    bold: True
+    background_normal: 'buttons/100_100_blue.png'
+    background_down: 'buttons/100_100_green.png'
+    font_size: '20sp'
+    size_hint: 1, None
+    height: 50
+
+<BTDeviceListItem>:
+    text: "Unknown"
+    bold: True
+    background_normal: 'buttons/100_100_blue.png'
+    background_down: 'buttons/100_100_green.png'
+    font_size: '30sp'
+    size_hint: 1, None
+    height: 50
+    on_press: root.on_bt_device_list_item_clicked(self)
+#    on_state:
+#        if self.state == 'down': self.text = root.text_connected
+#        else: self.text = root.text_connect
+
+<AudioContent>:
+    orientation: 'vertical'
+    spacing: 10
+    MyLabel:
+        text: root.text_audio
+        size_hint: 1, 0.1
+        halign: 'center'
+    ScrollView:
+        size_hint: 1, 0.8
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            id: audio_grid
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: 12
+
+    Widget:
+        size_hint: 1, 0.1
+    MyButton:
+        id: close_button
+        text: root.text_close
+        size_hint: 1, 0.1
+        # binding is done in the python code
+
+<Main>:
+    id: mainbox
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+    canvas:
+        Color:
+            rgb: Style.MainMenuStyle().backcolor
+        Rectangle:
+            size: self.size
+
+    BoxLayout:
+        id: header
+        orientation: 'horizontal'
+        size_hint: 1, 0.1
+        Widget:
+            size_hint: 0.2, 1
+        MyLabel:
+            text: "BTP Bluetooth Manager"
+            halign: 'center'
+            valign: 'middle'
+            size_hint: 0.6, 1
+        MyButton:
+            id: reset_button
+            text: root.text_reset_bt
+            size_hint: 0.2, 1
+            on_release: root.on_reset_button_clicked()
+
+    MyLabel:
+        text: root.text_header_list
+
+    ScrollView:
+        id: bt_devices
+        do_scroll_x: False
+        do_scroll_y: True
+        size_hint: 1, 0.6
+
+        canvas.before:
+            Color:
+                rgb: [0.85, 0.85, 0.9]
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            id: bt_devices_grid
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: 12
+
+
+    BoxLayout:
+        id: footer
+        orientation: 'horizontal'
+        size_hint: 1, 0.075
+        MyLabel:
+            id: text_progress
+            text: root.text_progress
+            size_hint: 0.2, 0.5
+            halign: 'center'
+
+        ProgressBar:
+            id: progress_bar
+            size_hint: 1, 0.05
+            max: 100
+            value: 1
+            pos_hint: {'center_x': 0.5}
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, 0.2
+
+        MyButton:
+            text: root.text_close
+            size_hint: 0.2, 1
+            on_release: root.on_close_button_clicked()
+        Widget:
+            size_hint: 0.1, 1
+        MyButton:
+            id: audio_button
+            text: root.text_start_audio
+            size_hint: 0.3, 1
+            disabled: True
+            on_release: root.on_audio_button_clicked()
+        Widget:
+            size_hint: 0.1, 1
+        MyButton:
+            id: scan_button
+            text: root.text_scan
+            size_hint: 0.3, 1
+            on_release: root.on_scan_button_clicked()
+
+
