@@ -239,10 +239,6 @@ class Main(BoxLayout):
         # In case we have a onscreen keyboard
         Window.release_all_keyboards()
         App.get_running_app().stop()
-        # check to see if we need to restart BTP
-        if os.path.exists('/data/tools/respawn'):
-            self.logger.info("Restarting BTP")
-            os.system('/data/tools/respawn')
 
 
     def on_scan_button_clicked(self):
