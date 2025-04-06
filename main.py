@@ -104,7 +104,7 @@ class BTDeviceListItem(ToggleButton):
         if bt_device_list_item.state == "down":
             self.logger.info(f"Connecting to BT device: {self.device.Alias}")
             i = 0
-            while i < 2:
+            while i < 3:
                 try:
                     self.device.connect()
                 except Exception as e:
@@ -115,7 +115,7 @@ class BTDeviceListItem(ToggleButton):
                 else:
                     self.text = f"{self.device.Alias} - {self.text_connected}"
                     break
-            if i >= 2:
+            if i >= 3:
                 self.logger.error(f"Failed to connect to BT device: {self.device.Alias}")
                 bt_device_list_item.state = "normal"
                 self.text = self.device.Alias
